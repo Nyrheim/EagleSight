@@ -1,0 +1,244 @@
+{% extends "main_base.peb" %}
+{% block title %}Apply{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ model.baseUrl }}/static/css/main.css">
+<meta name="theme-color" content="#563d7c">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css" rel="stylesheet" />
+{% endblock %}
+{% block nav_apply %}
+<li class="nav-item active">
+    <a class="nav-link" href="{{ model.baseUrl }}/apply">Apply</a>
+</li>
+{% endblock %}
+{% block content %}
+<p class="lead">Welcome to Chronicles of Nyrheim! During the application process, we will ask for some information about you, and about the character you wish to play.</p>
+<p class="lead">This helps us figure out how much support and guidance you will need, as well as whether you will be a good fit for our community.</p>
+<p class="lead">First, let's talk about you.</p>
+<form method="post" action="/apply/character">
+    <div class="form-group">
+        <label for="minecraft-user">What is your Minecraft username?</label>
+        <input type="text" class="form-control" id="minecraft-user">
+    </div>
+    <div class="form-group">
+        <label for="discord-user">What is your Discord username? (include the number after the # please!)</label>
+        <input type="text" class="form-control" id="discord-user">
+    </div>
+    <div class="form-group">
+        <label for="age">How old are you?</label>
+        <input type="number" min="15" class="form-control" id="age">
+    </div>
+    <div class="form-group">
+        <label for="timezone">Which timezone are you in?</label>
+        <select class="form-control" id="timezone">
+            <option id="acdt">ACDT</option>
+            <option id="acst">ACST</option>
+            <option id="act">ACT</option>
+            <option id="acwst">ACWST</option>
+            <option id="adt">ADT</option>
+            <option id="aedt">AEDT</option>
+            <option id="aest">AEST</option>
+            <option id="aet">AET</option>
+            <option id="aft">AFT</option>
+            <option id="akdt">AKDT</option>
+            <option id="akst">AKST</option>
+            <option id="almt">ALMT</option>
+            <option id="amst">AMST</option>
+            <option id="amt">AMT</option>
+            <option id="anat">ANAT</option>
+            <option id="aqtt">AQTT</option>
+            <option id="art">ART</option>
+            <option id="ast">AST</option>
+            <option id="awst">AWST</option>
+            <option id="azost">AZOST</option>
+            <option id="azot">AZOT</option>
+            <option id="azt">AZT</option>
+            <option id="bdt">BDT</option>
+            <option id="biot">BIOT</option>
+            <option id="bit">BIT</option>
+            <option id="bot">BOT</option>
+            <option id="brst">BRST</option>
+            <option id="brt">BRT</option>
+            <option id="bst">BST</option>
+            <option id="btt">BTT</option>
+            <option id="cat">CAT</option>
+            <option id="cct">CCT</option>
+            <option id="cdt">CDT</option>
+            <option id="cest">CEST</option>
+            <option id="cet">CET</option>
+            <option id="chadt">CHADT</option>
+            <option id="chast">CHAST</option>
+            <option id="chot">CHOT</option>
+            <option id="chost">CHOST</option>
+            <option id="chst">CHST</option>
+            <option id="chut">CHUT</option>
+            <option id="cist">CIST</option>
+            <option id="cit">CIT</option>
+            <option id="ckt">CKT</option>
+            <option id="clst">CLST</option>
+            <option id="clt">CLT</option>
+            <option id="cost">COST</option>
+            <option id="cot">COT</option>
+            <option id="cst">CST</option>
+            <option id="ct">CT</option>
+            <option id="cvt">CVT</option>
+            <option id="cwst">CWST</option>
+            <option id="cxt">CXT</option>
+            <option id="davt">DAVT</option>
+            <option id="ddut">DDUT</option>
+            <option id="dft">DFT</option>
+            <option id="easst">EASST</option>
+            <option id="east">EAST</option>
+            <option id="eat">EAT</option>
+            <option id="ect">ECT</option>
+            <option id="edt">EDT</option>
+            <option id="eest">EEST</option>
+            <option id="eet">EET</option>
+            <option id="egst">EGST</option>
+            <option id="egt">EGT</option>
+            <option id="eit">EIT</option>
+            <option id="est">EST</option>
+            <option id="fet">FET</option>
+            <option id="fjt">FJT</option>
+            <option id="fkst">FKST</option>
+            <option id="fkt">FKT</option>
+            <option id="fnt">FNT</option>
+            <option id="galt">GALT</option>
+            <option id="gamt">GAMT</option>
+            <option id="get">GET</option>
+            <option id="gft">GFT</option>
+            <option id="gilt">GILT</option>
+            <option id="git">GIT</option>
+            <option id="gmt">GMT</option>
+            <option id="gst">GST</option>
+            <option id="gyt">GYT</option>
+            <option id="hdt">HDT</option>
+            <option id="haec">HAEC</option>
+            <option id="hst">HST</option>
+            <option id="hkt">HKT</option>
+            <option id="hmt">HMT</option>
+            <option id="hovst">HOVST</option>
+            <option id="hovt">HOVT</option>
+            <option id="ict">ICT</option>
+            <option id="idlw">IDLW</option>
+            <option id="idt">IDT</option>
+            <option id="iot">IOT</option>
+            <option id="irdt">IRDT</option>
+            <option id="irkt">IRKT</option>
+            <option id="irst">IRST</option>
+            <option id="ist">IST</option>
+            <option id="jst">JST</option>
+            <option id="kalt">KALT</option>
+            <option id="kgt">KGT</option>
+            <option id="kost">KOST</option>
+            <option id="krat">KRAT</option>
+            <option id="kst">KST</option>
+            <option id="lhst">LHST</option>
+            <option id="lint">LINT</option>
+            <option id="magt">MAGT</option>
+            <option id="mart">MART</option>
+            <option id="mawt">MAWT</option>
+            <option id="mdt">MDT</option>
+            <option id="met">MET</option>
+            <option id="mest">MEST</option>
+            <option id="mht">MHT</option>
+            <option id="mist">MIST</option>
+            <option id="mit">MIT</option>
+            <option id="mmt">MMT</option>
+            <option id="msk">MSK</option>
+            <option id="mst">MST</option>
+            <option id="mut">MUT</option>
+            <option id="mvt">MVT</option>
+            <option id="myt">MYT</option>
+            <option id="nct">NCT</option>
+            <option id="ndt">NDT</option>
+            <option id="nft">NFT</option>
+            <option id="novt">NOVT</option>
+            <option id="npt">NPT</option>
+            <option id="nst">NST</option>
+            <option id="nt">NT</option>
+            <option id="nut">NUT</option>
+            <option id="nzdt">NZDT</option>
+            <option id="nzst">NZST</option>
+            <option id="omst">OMST</option>
+            <option id="orat">ORAT</option>
+            <option id="pdt">PDT</option>
+            <option id="pet">PET</option>
+            <option id="pett">PETT</option>
+            <option id="pgt">PGT</option>
+            <option id="phot">PHOT</option>
+            <option id="pht">PHT</option>
+            <option id="pkt">PKT</option>
+            <option id="pmdt">PMDT</option>
+            <option id="pmst">PMST</option>
+            <option id="pont">PONT</option>
+            <option id="pst">PST</option>
+            <option id="pyst">PYST</option>
+            <option id="pyt">PYT</option>
+            <option id="ret">RET</option>
+            <option id="rott">ROTT</option>
+            <option id="sakt">SAKT</option>
+            <option id="samt">SAMT</option>
+            <option id="sast">SAST</option>
+            <option id="sbt">SBT</option>
+            <option id="sct">SCT</option>
+            <option id="sdt">SDT</option>
+            <option id="sgt">SGT</option>
+            <option id="slst">SLST</option>
+            <option id="sret">SRET</option>
+            <option id="srt">SRT</option>
+            <option id="sst">SST</option>
+            <option id="syot">SYOT</option>
+            <option id="taht">TAHT</option>
+            <option id="tha">THA</option>
+            <option id="tft">TFT</option>
+            <option id="tjt">TJT</option>
+            <option id="tkt">TKT</option>
+            <option id="tlt">TLT</option>
+            <option id="tmt">TMT</option>
+            <option id="trt">TRT</option>
+            <option id="tot">TOT</option>
+            <option id="tvt">TVT</option>
+            <option id="ulast">ULAST</option>
+            <option id="ulat">ULAT</option>
+            <option id="utc">UTC</option>
+            <option id="uyst">UYST</option>
+            <option id="uyt">UYT</option>
+            <option id="uzt">UZT</option>
+            <option id="vet">VET</option>
+            <option id="vlat">VLAT</option>
+            <option id="volt">VOLT</option>
+            <option id="vost">VOST</option>
+            <option id="vut">VUT</option>
+            <option id="wakt">WAKT</option>
+            <option id="wast">WAST</option>
+            <option id="wat">WAT</option>
+            <option id="west">WEST</option>
+            <option id="wet">WET</option>
+            <option id="wit">WIT</option>
+            <option id="wgst">WGST</option>
+            <option id="wgt">WGT</option>
+            <option id="wst">WST</option>
+            <option id="yakt">YAKT</option>
+            <option id="yekt">YEKT</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="roleplay-experience">What prior roleplay experience do you have? (Don't worry if it's none or little! We just like to know who could use an extra hand.)</label>
+        <textarea class="form-control" rows="4" id="roleplay-experience"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="where-from">Where did you find out about us? (Please be as specific as you can, it helps us know what works to bring in new players to our server!)</label>
+        <input type="text" class="form-control" id="where-from">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-lg btn-success">Continue</a>
+    </div>
+</form>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+<script>$("#timezone").select2({
+    theme: "bootstrap"
+});</script>
+{% endblock %}

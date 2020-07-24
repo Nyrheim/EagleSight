@@ -1,0 +1,10 @@
+{% extends "main_base.peb" %}
+{% block title %}Home{% endblock %}
+{% block nav_home %}
+<li class="nav-item active">
+    <a class="nav-link" href="{{ model.baseUrl }}/">Home</a>
+</li>
+{% endblock %}
+{% block content %}
+<a class="btn btn-success btn-lg" href="{{ model.baseUrl }}/apply">Apply</a>
+{% endblock %}

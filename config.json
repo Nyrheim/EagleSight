@@ -1,0 +1,9 @@
+{
+  "server": {
+    "port": 9008,
+    "baseUrl": "http://localhost:9008"
+  },
+  "carrierPidgeon": {
+    "url": "http://localhost:9007"
+  }
+}
